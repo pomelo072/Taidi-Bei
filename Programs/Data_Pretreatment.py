@@ -21,36 +21,11 @@ def Year_Data_Extraction(data):
     left_data = data.loc[:, ['股票编号', '年份（年末）', '每股资本公积(元/股)', '每股未分配利润(元/股)']]
     left_data['每股资本公积(元/股)+每股未分配利润(元/股)'] = left_data[['每股资本公积(元/股)', '每股未分配利润(元/股)']].sum(axis=1)
     # 合并两表
-    fanal_data = pd.merge(left_data, right_data, on=['股票编号', '年份（年末）'])
+    temp_data = pd.merge(left_data, right_data, on=['股票编号', '年份（年末）'])
+    SZ_temp_data = data.loc[data['年份（年末）'] >= 6, ['股票编号', '年份（年末）', '每股送转']].fillna(0.0)
+    SZ_data = SZ_temp_data.groupby('股票编号')['每股送转'].agg(np.mean).reset_index()
+    fanal_data = pd.merge(temp_data, SZ_data.loc[:, ['股票编号', '每股送转']], on='股票编号')
     return fanal_data
-
-
-# 次新股判断
-def Is_snew_share(x):
-    if '次新股' in x:
-        return 1
-    else:
-        return 0
-
-
-# 预增减判断
-def Is_YZ_YJ(x):
-    if '预增' in x:
-        return 1
-    elif '预减' in x:
-        return -1
-    else:
-        return 0
-
-
-# 超涨跌判断
-def Is_CZ_CD(x):
-    if '超涨' in x:
-        return 1
-    elif '超跌' in x:
-        return -1
-    else:
-        return 0
 
 
 # 基础数据提取
@@ -58,7 +33,7 @@ def Basic_Data_Extraction(data):
     group_data = data.groupby(by='股票编号')
     fanal_data = data.loc[:, ['股票编号', '上市年限']]
     # 以下错误
-    fanal_data['次新股'] = group_data['所属概念板块'].agg(Is_snew_share)
-    fanal_data['预增或预减'] = group_data['所属概念板块'].agg(Is_YZ_YJ)
-    fanal_data['超涨或超跌'] = group_data['所属概念板块'].agg(Is_CZ_CD)
+    fanal_data['次新股'] = group_data['所属概念板块'].apply(Is_snew_share())
+    fanal_data['预增或预减'] = group_data['所属概念板块'].apply(Is_YZ_YJ())
+    fanal_data['超涨或超跌'] = group_data['所属概念板块'].apply(Is_CZ_CD())
     return fanal_data
