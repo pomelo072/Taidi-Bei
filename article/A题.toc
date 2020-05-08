@@ -1,0 +1,37 @@
+\contentsline {section}{\numberline {1}问题的提出}{3}{section.1}%
+\contentsline {section}{\numberline {2}分析方法与过程}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}总体流程}{3}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}具体步骤}{4}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}数据分析}{4}{subsubsection.2.2.1}%
+\contentsline {paragraph}{数据的整体分析和介绍}{4}{section*.2}%
+\contentsline {paragraph}{选取基本因子、成长因子和可能潜在的因子，并说明原因}{4}{section*.3}%
+\contentsline {paragraph}{定义因子的具体处理方式}{5}{section*.4}%
+\contentsline {paragraph}{计算各个因子的相关性和方差}{5}{section*.5}%
+\contentsline {subsubsection}{\numberline {2.2.2}数据预处理}{6}{subsubsection.2.2.2}%
+\contentsline {paragraph}{因子定义}{6}{section*.6}%
+\contentsline {subsubsection}{\numberline {2.2.3}模型建立}{7}{subsubsection.2.2.3}%
+\contentsline {paragraph}{1. Lasso回归}{7}{section*.7}%
+\contentsline {subparagraph}{简述}{7}{section*.8}%
+\contentsline {paragraph}{2. 决策树}{7}{section*.9}%
+\contentsline {subparagraph}{简述}{7}{section*.10}%
+\contentsline {subparagraph}{特征选择（最优化分属性）（criterion）}{7}{section*.11}%
+\contentsline {subparagraph}{CART树生成过程}{8}{section*.12}%
+\contentsline {subparagraph}{决策树剪枝（同时进行测试）}{8}{section*.13}%
+\contentsline {subparagraph}{模型训练}{8}{section*.14}%
+\contentsline {paragraph}{3. KNN}{9}{section*.15}%
+\contentsline {subparagraph}{简述}{9}{section*.16}%
+\contentsline {subparagraph}{算法过程}{9}{section*.17}%
+\contentsline {subparagraph}{模型构建测试}{9}{section*.18}%
+\contentsline {paragraph}{4. Logistic回归}{10}{section*.19}%
+\contentsline {subparagraph}{简述}{10}{section*.20}%
+\contentsline {subparagraph}{步骤}{10}{section*.21}%
+\contentsline {subparagraph}{模型构建与测试}{10}{section*.22}%
+\contentsline {paragraph}{5. 硬投票}{10}{section*.23}%
+\contentsline {subparagraph}{简述}{11}{section*.24}%
+\contentsline {subparagraph}{模型构建}{11}{section*.25}%
+\contentsline {subparagraph}{模型保存与加载}{11}{section*.26}%
+\contentsline {subsubsection}{\numberline {2.2.4}模型优化}{11}{subsubsection.2.2.4}%
+\contentsline {subsubsection}{\numberline {2.2.5}模型评估}{11}{subsubsection.2.2.5}%
+\contentsline {subsection}{\numberline {2.3}结果分析}{12}{subsection.2.3}%
+\contentsline {section}{\numberline {3}结论}{12}{section.3}%
+\contentsline {section}{参考文献}{13}{section*.27}%
